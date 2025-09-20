@@ -74,7 +74,7 @@ export default function HomePage() {
           >
             <Building2 className="h-8 w-8 text-orange-500" />
             <span className="text-2xl font-bold text-gray-800">
-              FUTUREDGE HOMES LTD. Real Estate
+              FUTUREDGE HOMES LTD.
             </span>
           </motion.div>
 
@@ -102,7 +102,7 @@ export default function HomePage() {
         <motion.div style={{ y }} className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 z-10" />
           <Image
-            src="/images/hero-construction.jpg"
+            src="/images/mainPhoto.JPG"
             alt="Construction site with cranes and buildings"
             fill
             className="object-cover"
@@ -126,10 +126,10 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto"
           >
-            Trusted Real Estate Experts
+            Your Trusted Home Builder
           </motion.p>
 
-          <motion.button
+          {/* <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -139,7 +139,7 @@ export default function HomePage() {
           >
             <span>Get a Quote</span>
             <ArrowRight className="h-5 w-5" />
-          </motion.button>
+          </motion.button> */}
         </div>
       </section>
 
@@ -159,7 +159,7 @@ export default function HomePage() {
             >
               About{" "}
               <span className="text-orange-500">
-                FUTUREDGE HOMES LTD. Real Estate
+                FUTUREDGE HOMES LTD.
               </span>
             </motion.h2>
 
@@ -176,7 +176,7 @@ export default function HomePage() {
 
             <motion.div variants={fadeInUp} className="mb-8">
               <Image
-                src="/images/construction-team.jpg"
+                src="/images/sidePhoto.JPG"
                 alt="Professional construction team"
                 width={800}
                 height={400}
@@ -433,12 +433,12 @@ export default function HomePage() {
                       <p className="text-gray-600">futuredgehomes@gmail.com</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  {/* <div className="flex items-center space-x-4">
                     <div className="bg-yellow-500 p-3 rounded-full">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Office</h4>
+                      <h4 className="font-semibold text-gray-800">FUTUREDGE HOMES LTD.</h4>
                       <p className="text-gray-600">
                         Futuredge Homes LTD.
                         <br />
@@ -447,7 +447,7 @@ export default function HomePage() {
                         Edmonton Alberta T6W 2E2
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
@@ -463,7 +463,7 @@ export default function HomePage() {
               <div className="flex items-center space-x-2 mb-4">
                 <Building2 className="h-8 w-8 text-orange-500" />
                 <span className="text-2xl font-bold">
-                  FUTUREDGE HOMES LTD. Real Estate
+                  FUTUREDGE HOMES LTD.
                 </span>
               </div>
               <p className="text-gray-400">
@@ -482,9 +482,8 @@ export default function HomePage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Futuredge Homes LTD.</li>
-                <li>3736 W eidle Crescent SW,</li>
-                <li>Edmonton Alberta T6W 2E2</li>
+                <li>Phone : (780) 245-0238</li>
+                <li>Email : futuredgehomes@gmail.com</li>
               </ul>
             </div>
           </div>
