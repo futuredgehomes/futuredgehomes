@@ -324,7 +324,7 @@ export default function HomePage() {
             {(() => {
               const projects = [
                 {
-                  image: "/images/house-1.jpg",
+                  image: "/images/house-1.jpg", 
                 },
                 {
                   image: "/images/house-2.jpg",
