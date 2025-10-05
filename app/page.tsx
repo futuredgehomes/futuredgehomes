@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ContactModal from "./ContactModal";
-import Link from 'next/link';
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Building2,
@@ -82,40 +82,40 @@ export default function HomePage() {
             </span>
           </motion.div>
 
- {/* Desktop Links */}
-  <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
-    {/* <L</Link>ink href="/">Home</Link>
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
+            {/* <L</Link>ink href="/">Home</Link>
     <Link href="/#services">Services</Link>
     <Link href="/#projects">Projects</Link>
     <Link href="/#contact">Contact</Link> */}
-    <Link href="/about" className="text-orange-500">
-      Communities
-    </Link>
-  </div>
+            <Link href="/about" className="text-orange-500">
+              Communities
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
-    className="md:hidden"
-    onClick={() => setIsMenuOpen(!isMenuOpen)}
-  >
-    {isMenuOpen ? (
-      <X className="h-6 w-6" />
-    ) : (
-      <Menu className="h-6 w-6" />
-    )}
-  </button>
-           {/* ✅ Add this block BELOW the closing </button> */}
-  {isMenuOpen && (
-    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 px-4 py-4">
-      <Link
-        href="/about"
-        className="block text-orange-500 font-semibold"
-        onClick={() => setIsMenuOpen(false)}
-      >
-        Communities
-      </Link>
-    </div>
-  )}
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+          {/* ✅ Add this block BELOW the closing </button> */}
+          {isMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 px-4 py-4">
+              <Link
+                href="/about"
+                className="block text-orange-500 font-semibold"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Communities
+              </Link>
+            </div>
+          )}
         </nav>
 
         {/* Mobile Menu */}
@@ -156,19 +156,20 @@ export default function HomePage() {
             Your Trusted Home Builder
           </motion.p>
 
-          { <motion.button
-          
-        onClick={() => setIsContactModalOpen(true)}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
-          >
-            <span>Contact Us</span>
-            <ArrowRight className="h-5 w-5" />
-          </motion.button> }
+          {
+            <motion.button
+              onClick={() => setIsContactModalOpen(true)}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
+            >
+              <span>Contact Us</span>
+              <ArrowRight className="h-5 w-5" />
+            </motion.button>
+          }
         </div>
       </section>
 
@@ -187,9 +188,7 @@ export default function HomePage() {
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-8"
             >
               About{" "}
-              <span className="text-orange-500">
-                FUTUREDGE HOMES LTD.
-              </span>
+              <span className="text-orange-500">FUTUREDGE HOMES LTD.</span>
             </motion.h2>
 
             <motion.p
@@ -353,7 +352,7 @@ export default function HomePage() {
             {(() => {
               const projects = [
                 {
-                  image: "/images/house-1.jpg", 
+                  image: "/images/house-1.jpg",
                 },
                 {
                   image: "/images/house-2.jpg",
@@ -491,9 +490,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Building2 className="h-8 w-8 text-orange-500" />
-                <span className="text-2xl font-bold">
-                  FUTUREDGE HOMES LTD.
-                </span>
+                <span className="text-2xl font-bold">FUTUREDGE HOMES LTD.</span>
               </div>
               <p className="text-gray-400">
                 Real Estate excellence. Your trusted construction partner.
@@ -523,9 +520,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-         {isContactModalOpen && (
-        <ContactModal onClose={() => setIsContactModalOpen(false)} />
-      )}
+        {isContactModalOpen && (
+          <ContactModal onClose={() => setIsContactModalOpen(false)} />
+        )}
       </footer>
     </div>
   );
