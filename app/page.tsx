@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import ContactModal from "./ContactModal";
+import Link from 'next/link';
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Building2,
@@ -19,6 +21,8 @@ import {
 import Image from "next/image";
 
 export default function HomePage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
@@ -78,17 +82,40 @@ export default function HomePage() {
             </span>
           </motion.div>
 
+ {/* Desktop Links */}
+  <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
+    {/* <L</Link>ink href="/">Home</Link>
+    <Link href="/#services">Services</Link>
+    <Link href="/#projects">Projects</Link>
+    <Link href="/#contact">Contact</Link> */}
+    <Link href="/about" className="text-orange-500">
+      Communities
+    </Link>
+  </div>
+
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+    className="md:hidden"
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+  >
+    {isMenuOpen ? (
+      <X className="h-6 w-6" />
+    ) : (
+      <Menu className="h-6 w-6" />
+    )}
+  </button>
+           {/* ✅ Add this block BELOW the closing </button> */}
+  {isMenuOpen && (
+    <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 px-4 py-4">
+      <Link
+        href="/about"
+        className="block text-orange-500 font-semibold"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        Communities
+      </Link>
+    </div>
+  )}
         </nav>
 
         {/* Mobile Menu */}
@@ -129,7 +156,9 @@ export default function HomePage() {
             Your Trusted Home Builder
           </motion.p>
 
-          {/* <motion.button
+          { <motion.button
+          
+        onClick={() => setIsContactModalOpen(true)}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -137,9 +166,9 @@ export default function HomePage() {
             whileTap={{ scale: 0.95 }}
             className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
           >
-            <span>Get a Quote</span>
+            <span>Contact Us</span>
             <ArrowRight className="h-5 w-5" />
-          </motion.button> */}
+          </motion.button> }
         </div>
       </section>
 
@@ -494,6 +523,9 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+         {isContactModalOpen && (
+        <ContactModal onClose={() => setIsContactModalOpen(false)} />
+      )}
       </footer>
     </div>
   );
