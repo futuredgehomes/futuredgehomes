@@ -115,7 +115,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
           {/* ✅ Add this block BELOW the closing </button> */}
 {isMenuOpen && (
   <div
-    className="md:hidden absolute top-full w-1/2 bg-white shadow-md z-40 px-4 py-4 overflow-auto"
+    className="md:hidden absolute top-full w-1/2 bg-transparent shadow-md z-40 px-4 py-4 overflow-auto"
     style={{ left: '50vw' }}
   >
     {/* Communities Dropdown */}
@@ -124,20 +124,21 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
         onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
         className="w-full text-yellow-700 font-bold focus:outline-none flex justify-between items-center mb-2"
       >
+        <span className="text-right">{isCommunitiesOpen ? '▼' : '▲'}</span>
+
         <span className="text-left">Communities</span>
-        <span className="text-right">{isCommunitiesOpen ? '^' : 'v'}</span>
       </button>
 
       {isCommunitiesOpen && (
-        <div className="pl-4 mt-2">
+        <div className="pl-16 mt-1">
           <Link
             href="/about"
             className="block text-yellow-700 font-semibold mb-1"
             onClick={() => setIsMenuOpen(false)}
           >
-            Community Page
+            Communities
           </Link>
-        </div>
+        </div>  
       )}
     </div>
 
@@ -147,14 +148,15 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
         onClick={() => setIsReviewsOpen(!isReviewsOpen)}
         className="w-full text-yellow-700 font-bold focus:outline-none flex justify-between items-center mb-2"
       >
+        <span className="text-right">{isReviewsOpen ? '▼' : '▲'}</span>
         <span className="text-left">Reviews</span>
-        <span className="text-right">{isReviewsOpen ? '^' : 'v'}</span>
+        
       </button>
 
       {isReviewsOpen && (
-        <div className="pl-4 mt-2">
+        <div className="pl-16 mt-1">
           <Link
-            href="/testimonial"
+            href="/testinomial"
             className="block text-yellow-700 font-semibold mb-1"
             onClick={() => setIsMenuOpen(false)}
           >
@@ -339,25 +341,25 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
                 icon: Home,
                 title: "Residential Construction",
                 desc: "Custom homes and residential developments",
-                color: "bg-yellow-700",
+                color: "bg-yellow-900",
               },
               {
                 icon: Building2,
                 title: "Commercial Projects",
                 desc: "Office buildings, retail spaces, and warehouses",
-                color: "bg-blue-600",
+                color: "bg-gray-900",
               },
               {
                 icon: Wrench,
                 title: "Renovation & Interiors",
                 desc: "Modernizing and upgrading existing structures",
-                color: "bg-yellow-500",
+                color: "bg-red-900",
               },
               {
                 icon: PaintBucket,
                 title: "Architectural Design",
                 desc: "Creative design solutions for unique projects",
-                color: "bg-green-500",
+                color: "bg-green-800",
               },
             ].map((service, index) => (
               <motion.div
@@ -514,7 +516,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
                     </div> */}
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="bg-yellow-800 p-3 rounded-full">
+                    <div className="bg-gray-800 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -545,7 +547,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
       </section>
 
       {/* Footer */}
-      <footer className="bg-yellow-900 text-white py-12">
+      <footer className="bg-yellow-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>

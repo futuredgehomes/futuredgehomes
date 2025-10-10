@@ -14,31 +14,37 @@ export default function TestinomialPage() {
       name: 'Gurjot S., Leduc',
       rating: 5,
       quote: 'Excellent craftsmanship and attention to detail. Our home was completed on time and within budget — highly recommended!',
+      date: 'August 2024',
     },
     {
       name: 'Harpreet & Jaspreet S., Beaumont',
       rating: 5,
       quote: 'They made our first custom home experience stress-free and enjoyable. The quality speaks for itself.',
+      date: 'November 2024',
     },
     {
       name: 'Simran S., Edmonton',
       rating: 5,
       quote: 'We chose Future Edge Homes for our infill project, and it was the best decision. From the design stage to the final touches, they kept us informed and involved. The finishes are premium, and the workmanship is outstanding. I’ve already recommended them to friends!',
+      date: 'Jan 2025',
     },
     {
       name: 'Raman G., Edmonton',
       rating: 5,
       quote: 'We hired FutureEdge Homes for a 7-plex development, and the coordination was exceptional. The project was complex, but they handled every detail from permits to possession efficiently. We’ll definitely work together again on our next project.',
+      date: 'April 2025',
     },
     {
       name: 'Manpreet S., Leduc',
       rating: 5,
       quote: 'Future Edge Homes built our dream home in South Edmonton. The quality, attention to detail, and communication were outstanding!',
+      date: 'May 2025',
     },
      {
-      name: 'Manpreet S., Leduc',
-      rating: 5,
-      quote: 'Future Edge Homes built our dream home in South Edmonton. The quality, attention to detail, and communication were outstanding!',
+      name: 'Gurpreet Singh, Edmonton',
+      rating: 4,
+      quote: 'Future Edge Homes exceeded our expectations in every way. The build quality , design, and transparency throughout the project was exceptional',
+      date: 'July 2025',
     } 
   ];
 
@@ -122,29 +128,31 @@ export default function TestinomialPage() {
 
         {/* Testimonial Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white rounded-xl shadow-md p-6 text-left border border-gray-100 flex flex-col justify-between"
-              style={{ minHeight: '250px' }}
-            >
-              <p className="text-yellow-700  flex-grow">
-                “{testimonial.quote}”
-              </p>
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-800 font-semibold">— {testimonial.name}</p>
-              </div>
-            </motion.div>
-          ))}
+         {testimonials.map((testimonial, index) => (
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: index * 0.2 }}
+    className="bg-white rounded-xl shadow-md p-6 text-left border border-gray-100 flex flex-col justify-between"
+    style={{ minHeight: '250px' }}
+  >
+    <p className="text-yellow-700 flex-grow">
+      “{testimonial.quote}”
+    </p>
+    <div className="mt-6 pt-4 border-t border-gray-200">
+      <p className="text-sm text-gray-800 font-semibold">{testimonial.name}</p>
+      <p className="text-xs text-gray-500 mt-1">{testimonial.date}</p> {/* 👈 Add this line */}
+    </div>
+  </motion.div>
+))}
+
         </div>
       </motion.div>
 
       {/* ✅ Footer */}
-      <footer className="bg-yellow-900 text-white py-12 mt-20">
+      <footer className="bg-yellow-800 text-white py-12 mt-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
