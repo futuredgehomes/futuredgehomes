@@ -80,7 +80,7 @@ const [success, setSuccess] = useState<string | null>(null);
           ✕
         </button>
 
-       <h2 className="text-2xl font-bold mb-6" style={{ color: 'black' }}>
+       <h2 className="text-yellow-700 text-2xl font-bold mb-6" style={{ color: '' }}>
   Contact Us
 </h2>
 
@@ -111,7 +111,7 @@ const [success, setSuccess] = useState<string | null>(null);
           />
           <button
             type="submit"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-semibold disabled:opacity-50"
+            className="bg-yellow-700 hover:bg-orange-600 text-white px-6 py-3 rounded font-semibold disabled:opacity-50"
           >
             {isSending ? "Sending..." : "Send Message"}
           </button>

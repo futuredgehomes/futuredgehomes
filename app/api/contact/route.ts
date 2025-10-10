@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
 
    const info = await transporter.sendMail({
   from: `"Website Contact Form" <${SMTP_USER}>`,
-  to: "kiran0001.gill@gmail.com",
+  to: "Futuredgehomesltd@gmail.com",
   subject: `New inquiry from ${name}`,
   text: `Name: ${name}\nPhone: ${number}\nMessage:\n${message}`,
   html: `

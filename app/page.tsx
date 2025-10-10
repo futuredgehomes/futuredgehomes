@@ -22,7 +22,8 @@ import Image from "next/image";
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
+const [isReviewsOpen, setIsReviewsOpen] = useState(false);
+  const [isCommunitiesOpen, setIsCommunitiesOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
@@ -63,24 +64,28 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50"
-      >
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center space-x-2"
-          >
-            <Building2 className="h-8 w-8 text-orange-500" />
-            <span className="text-2xl font-bold text-gray-800">
-              FUTUREDGE HOMES LTD.
-            </span>
-          </motion.div>
+     <motion.header
+  initial={{ y: -100 }}
+  animate={{ y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="fixed top-0 w-full bg-transparent shadow-lg z-50"
+>
+
+        <nav className="container mx-auto px-4 py-4 flex items-center justify-between" >
+        <motion.div
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5 }}
+  className="flex items-center space-x-2"
+>
+  <img style={{width: 170}}
+    src="/images/futurelogo.png"
+    alt="FutureEdge Logo"
+    className="h-16 w-16 object-contain"
+  />
+</motion.div>
+
+
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
@@ -88,8 +93,11 @@ export default function HomePage() {
     <Link href="/#services">Services</Link>
     <Link href="/#projects">Projects</Link>
     <Link href="/#contact">Contact</Link> */}
-            <Link href="/about" className="text-orange-500">
+            <Link href="/about" className="text-yellow-700">
               Communities
+            </Link>
+             <Link href="/testinomial" className="text-yellow-700">
+              Testimonials
             </Link>
           </div>
 
@@ -105,17 +113,62 @@ export default function HomePage() {
             )}
           </button>
           {/* ✅ Add this block BELOW the closing </button> */}
-          {isMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40 px-4 py-4">
-              <Link
-                href="/about"
-                className="block text-orange-500 font-semibold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Communities
-              </Link>
-            </div>
-          )}
+{isMenuOpen && (
+  <div
+    className="md:hidden absolute top-full w-1/2 bg-transparent shadow-md z-40 px-4 py-4 overflow-auto"
+    style={{ left: '50vw' }}
+  >
+    {/* Communities Dropdown */}
+    <div className="mb-4">
+      <button
+        onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
+        className="w-full text-yellow-700 font-bold focus:outline-none flex justify-between items-center mb-2"
+      >
+        <span className="text-right">{isCommunitiesOpen ? '▼' : '▲'}</span>
+
+        <span className="text-left">Communities</span>
+      </button>
+
+      {isCommunitiesOpen && (
+        <div className="pl-16 mt-1">
+          <Link
+            href="/about"
+            className="block text-yellow-700 font-semibold mb-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Communities
+          </Link>
+        </div>  
+      )}
+    </div>
+
+    {/* Reviews Dropdown */}
+    <div>
+      <button
+        onClick={() => setIsReviewsOpen(!isReviewsOpen)}
+        className="w-full text-yellow-700 font-bold focus:outline-none flex justify-between items-center mb-2"
+      >
+        <span className="text-right">{isReviewsOpen ? '▼' : '▲'}</span>
+        <span className="text-left">Reviews</span>
+        
+      </button>
+
+      {isReviewsOpen && (
+        <div className="pl-16 mt-1">
+          <Link
+            href="/testinomial"
+            className="block text-yellow-700 font-semibold mb-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Testimonials
+          </Link>
+        </div>
+      )}
+    </div>
+  </div>
+)}
+
+
         </nav>
 
         {/* Mobile Menu */}
@@ -127,14 +180,17 @@ export default function HomePage() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
         <motion.div style={{ y }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 z-10" />
-          <Image
-            src="/images/mainPhoto.JPG"
-            alt="Construction site with cranes and buildings"
-            fill
-            className="object-cover"
-          />
-        </motion.div>
+  <div className="absolute inset-0 bg-gradient-to-r from-yellow-700/20 to-blue-600/20 z-10" />
+  <video
+    src="/images/video1.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+</motion.div>
+
 
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <motion.h1
@@ -143,8 +199,8 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Building the Future with{" "}
-            <span className="text-yellow-400">Precision</span>
+            Tailored Spaces Timeless{" "}
+            <span className="text-yellow-900">Quality</span>
           </motion.h1>
 
           <motion.p
@@ -164,7 +220,7 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
+              className="bg-yellow-700 hover:bg-yellow-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center space-x-2"
             >
               <span>Contact Us</span>
               <ArrowRight className="h-5 w-5" />
@@ -188,7 +244,7 @@ export default function HomePage() {
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-8"
             >
               About{" "}
-              <span className="text-orange-500">FUTUREDGE HOMES LTD.</span>
+              <span className="text-yellow-700">FUTUREDGE HOMES LTD.</span>
             </motion.h2>
 
             <motion.p
@@ -202,15 +258,22 @@ export default function HomePage() {
               care.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="mb-8">
-              <Image
-                src="/images/sidePhoto.JPG"
-                alt="Professional construction team"
-                width={800}
-                height={400}
-                className="w-full max-w-2xl mx-auto rounded-xl shadow-lg object-cover"
-              />
-            </motion.div>
+          <motion.div variants={fadeInUp} className="mb-10">
+  <video
+    src="/images/base.mp4" // update this path
+    width={1000}
+    height={50}
+    className="w-full max-w-4xl mx-auto rounded-xl shadow-lg object-cover"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto" 
+    controls={false} // remove this if you want player controls
+  />
+</motion.div>
+
+
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -235,7 +298,7 @@ export default function HomePage() {
                   variants={fadeInUp}
                   className="bg-white p-6 rounded-lg shadow-lg"
                 >
-                  <item.icon className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+                  <item.icon className="h-12 w-12 text-yellow-700 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {item.title}
                   </h3>
@@ -261,7 +324,7 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
             >
-              Our <span className="text-blue-600">Services</span>
+              Our <span className="text-yellow-900">Services</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
@@ -278,25 +341,25 @@ export default function HomePage() {
                 icon: Home,
                 title: "Residential Construction",
                 desc: "Custom homes and residential developments",
-                color: "bg-orange-500",
+                color: "bg-yellow-900",
               },
               {
                 icon: Building2,
                 title: "Commercial Projects",
                 desc: "Office buildings, retail spaces, and warehouses",
-                color: "bg-blue-600",
+                color: "bg-gray-900",
               },
               {
                 icon: Wrench,
                 title: "Renovation & Interiors",
                 desc: "Modernizing and upgrading existing structures",
-                color: "bg-yellow-500",
+                color: "bg-red-900",
               },
               {
                 icon: PaintBucket,
                 title: "Architectural Design",
                 desc: "Creative design solutions for unique projects",
-                color: "bg-green-500",
+                color: "bg-green-800",
               },
             ].map((service, index) => (
               <motion.div
@@ -337,7 +400,7 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
             >
-              Featured <span className="text-yellow-500">Projects</span>
+              Featured <span className="text-yellow-900">Projects</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
@@ -416,7 +479,7 @@ export default function HomePage() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
             >
-              Get In <span className="text-orange-500">Touch</span>
+              Get In <span className="text-yellow-900">Touch</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
@@ -444,16 +507,16 @@ export default function HomePage() {
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-orange-500 p-3 rounded-full">
+                    {/* <div className="bg-orange-500 p-3 rounded-full">
                       <Phone className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Phone</h4>
                       <p className="text-gray-600">(780) 245-0238</p>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="bg-blue-600 p-3 rounded-full">
+                    <div className="bg-gray-800 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
@@ -484,12 +547,11 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-yellow-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Building2 className="h-8 w-8 text-orange-500" />
                 <span className="text-2xl font-bold">FUTUREDGE HOMES LTD.</span>
               </div>
               <p className="text-gray-400">
@@ -508,12 +570,12 @@ export default function HomePage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Phone : (780) 245-0238</li>
+                {/* <li>Phone : (780) 245-0238</li> */}
                 <li>Email : futuredgehomes@gmail.com</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-yellow-500 mt-8 pt-8 text-center text-gray-400">
             <p>
               &copy; {new Date().getFullYear()} FUTUREDGE HOMES LTD. Real
               Estate. All rights reserved.
