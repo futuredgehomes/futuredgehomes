@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "FUTUREDGE HOMES LTD. - Professional Construction Services",
   description:
     "Trusted construction experts since 2005. Specializing in residential, commercial, renovation, and architectural design services.",
-  keywords:
+  keywords: 
     "construction, building, residential, commercial, renovation, architecture, contractors",
   authors: [{ name: "FUTUREDGE HOMES LTD." }],
   openGraph: {
