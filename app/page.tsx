@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ContactModal from "./ContactModal";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRouter } from 'next/navigation';
 import {
   Building2,
   Home,
@@ -21,13 +22,16 @@ import {
 import Image from "next/image";
 
 export default function HomePage() {
+  const router = useRouter();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 const [isReviewsOpen, setIsReviewsOpen] = useState(false);
   const [isCommunitiesOpen, setIsCommunitiesOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
+  const ContactPage = () => {
+    router.push('/contact-us'); 
+  };
   useEffect(() => {
     const handleScroll = (e: Event) => {
       e.preventDefault();
@@ -38,7 +42,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
         element?.scrollIntoView({ behavior: "smooth" });
       }
     };
-
+ 
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach((link) => link.addEventListener("click", handleScroll));
 
@@ -98,6 +102,9 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
             </Link>
              <Link href="/testinomial" className="text-yellow-700">
               Testimonials
+            </Link>
+             <Link href="/contact-us" className="text-yellow-700">
+              Contact
             </Link>
           </div>
 
@@ -479,7 +486,9 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
             >
-              Get In <span className="text-yellow-900">Touch</span>
+              Get In   <span className="text-yellow-700 cursor-pointer" onClick={ContactPage}>
+      Touch
+    </span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
