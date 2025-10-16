@@ -106,6 +106,9 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
              <Link href="/contact-us" className="text-yellow-700">
               Contact
             </Link>
+             <Link href="/about-us" className="text-yellow-700">
+              About
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

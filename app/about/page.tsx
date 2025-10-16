@@ -8,7 +8,7 @@ import { ArrowLeft, Building2, Menu, X } from 'lucide-react';
 
 export default function AboutPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+ const [isCommunitiesOpen, setIsCommunitiesOpen] = useState(false);
   const communities = [
     {
       image: '/images/IrivineCreek.jpeg',
@@ -47,8 +47,11 @@ export default function AboutPage() {
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
-            <Link href="/about" className="text-yellow-700">Communities</Link>
+            <Link href="/about-us" className="text-yellow-700">About</Link>
+             <Link href="/contact-us" className="text-yellow-700">Contact</Link>
             <Link href="/testinomial" className="text-yellow-700">Testimonials</Link>
+            
+             
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -58,16 +61,53 @@ export default function AboutPage() {
         </nav>
 
         {/* Mobile Nav */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-md px-4 py-4">
-            <Link href="/about" className="block mb-4 text-yellow-700 font-semibold">
-              Communities
-            </Link>
-            <Link href="/testinomial" className="block text-yellow-700 font-semibold">
-              Testimonials
-            </Link>
-          </div>
-        )}
+       {isMenuOpen && (
+            <div
+              className="md:hidden absolute top-full w-1/2 bg-white shadow-lg z-40 px-4 py-4 overflow-auto rounded-b-md"
+              style={{ right: 0 }}
+            >
+              <Link
+                href="/about-us"
+                className="block text-yellow-700 font-semibold mb-3 text-right hover:text-yellow-800"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+
+              <Link
+                href="/contact-us"
+              className="block text-yellow-700 font-semibold mb-3 text-right hover:text-yellow-800"
+
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
+              {/* Communities Dropdown */}
+              <div>
+               <button
+  onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
+  className="w-full text-yellow-700 font-bold focus:outline-none flex items-center justify-between mb-2 hover:text-yellow-800"
+>
+  <span>{isCommunitiesOpen ? '▼' : '▲'}</span>
+  <span>Reviews</span>
+</button>
+
+
+                {isCommunitiesOpen && (
+                  <div className="pl-10 mt-4 border-l-2 border-yellow-700">
+                    <Link
+                      href="/testinomial"
+                      className="block text-yellow-700 font-semibold mb-2 hover:text-yellow-800"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Testimonials
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
       </header>
 
       {/* 🔙 Home Button */}
