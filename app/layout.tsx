@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: {
     index: true,
-    follow: true,
+    follow: true, 
   },
   generator: "v0.dev",
 };
