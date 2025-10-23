@@ -124,59 +124,73 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
           </button>
           {/* ✅ Add this block BELOW the closing </button> */}
 {isMenuOpen && (
-  <div
-    className="md:hidden absolute top-full w-1/2 bg-transparent shadow-md z-40 px-4 py-4 overflow-auto"
-    style={{ left: '50vw' }}
-  >
-    {/* Communities Dropdown */}
-    <div className="mb-4">
-      <button
-        onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
-        className="w-full text-yellow-700 font-bold focus:outline-none flex justify-between items-center mb-2"
-      >
-        <span className="text-right">{isCommunitiesOpen ? '▼' : '▲'}</span>
+            <div
+              className="md:hidden absolute top-full w-1/2 bg-white shadow-lg z-40 px-4 py-4 overflow-auto rounded-b-md"
+              style={{ right: 0 }}
+            >
+                <Link
+                             href="/about-us"
+                             className="block text-yellow-700 font-semibold mb-3 text-right hover:text-yellow-800"
+                             onClick={() => setIsMenuOpen(false)}
+                           >
+                             About
+                           </Link>
+              <Link
+                href="/contact-us"
+              className="block text-yellow-700 font-semibold mb-3 text-right hover:text-yellow-800"
 
-        <span className="text-left">Communities</span>
-      </button>
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
 
-      {isCommunitiesOpen && (
-        <div className="pl-16 mt-1">
-          <Link
-            href="/about"
-            className="block text-yellow-700 font-semibold mb-1"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Communities
-          </Link>
-        </div>  
-      )}
-    </div>
+              {/* Communities Dropdown */}
+              <div>
+               <button
+  onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
+  className="w-full text-yellow-700 font-bold focus:outline-none flex items-center justify-between mb-2 hover:text-yellow-800"
+>
+  <span>{isCommunitiesOpen ? '▼' : '▲'}</span>
+  <span>Communities</span>
+</button>
 
-    {/* Reviews Dropdown */}
-    <div>
-      <button
-        onClick={() => setIsReviewsOpen(!isReviewsOpen)}
-        className="w-full text-yellow-700 font-bold focus:outline-none flex justify-between items-center mb-2"
-      >
-        <span className="text-right">{isReviewsOpen ? '▼' : '▲'}</span>
-        <span className="text-left">Reviews</span>
-        
-      </button>
 
-      {isReviewsOpen && (
-        <div className="pl-16 mt-1">
-          <Link
-            href="/testinomial"
-            className="block text-yellow-700 font-semibold mb-1"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Testimonials
-          </Link>
-        </div>
-      )}
-    </div>
-  </div>
-)}
+                {isCommunitiesOpen && (
+                  <div className="pl-10 mt-4 border-l-2 border-yellow-700">
+                    <Link
+                      href="/about"
+                      className="block text-yellow-700 font-semibold mb-2 hover:text-yellow-800"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Communities
+                    </Link>
+                  </div>
+                )}
+              </div>
+               <div>
+               <button
+  onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
+  className="w-full text-yellow-700 font-bold focus:outline-none flex items-center justify-between mb-2 hover:text-yellow-800"
+>
+  <span>{isCommunitiesOpen ? '▼' : '▲'}</span>
+  <span>Reviews</span>
+</button>
+
+
+                {isCommunitiesOpen && (
+                  <div className="pl-10 mt-4 border-l-2 border-yellow-700">
+                    <Link
+                      href="/testinomial"
+                      className="block text-yellow-700 font-semibold mb-2 hover:text-yellow-800"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Testimonials
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
 
         </nav>
@@ -191,8 +205,8 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
       >
         <motion.div style={{ y }} className="absolute inset-0 z-0">
   <div className="absolute inset-0 bg-gradient-to-r from-yellow-700/20 to-blue-600/20 z-10" />
-  <video
-    src="/images/video1.mp4"
+  <video 
+    src="/images/new_video.MOV"
     autoPlay
     muted
     loop
@@ -269,8 +283,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
             </motion.p>
 
           <motion.div variants={fadeInUp} className="mb-10">
-  <video
-    src="/images/base.mp4" // update this path
+  <video    src="/images/video1.mp4" // update this path
     width={1000}
     height={50}
     className="w-full max-w-4xl mx-auto rounded-xl shadow-lg object-cover"
