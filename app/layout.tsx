@@ -6,14 +6,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FUTUREDGE HOMES LTD. - Professional Construction Services",
+  title: "FUTUREDGE HOMES LTD. - Custom Home Builder",
   description:
     "Trusted construction experts since 2005. Specializing in residential, commercial, renovation, and architectural design services.",
   keywords: 
     "construction, building, residential, commercial, renovation, architecture, contractors",
   authors: [{ name: "FUTUREDGE HOMES LTD." }],
   openGraph: {
-    title: "FUTUREDGE HOMES LTD. - Professional Construction Services",
+    title: "FUTUREDGE HOMES LTD. - Custom Home Builder",
     description:
       "Building the future with precision. Trusted construction experts since 2005.",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FUTUREDGE HOMES LTD. - Professional Construction Services",
+    title: "FUTUREDGE HOMES LTD. - Custom Home Builder",
     description:
       "Building the future with precision. Trusted construction experts since 2005.",
   },

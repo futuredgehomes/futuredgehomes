@@ -206,6 +206,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
         <motion.div style={{ y }} className="absolute inset-0 z-0">
   <div className="absolute inset-0 bg-gradient-to-r from-yellow-700/20 to-blue-600/20 z-10" />
   <video 
+    style={{ height: "1040px", marginTop: "-37px" }}
     src="/images/new_video.MOV"
     autoPlay
     muted
