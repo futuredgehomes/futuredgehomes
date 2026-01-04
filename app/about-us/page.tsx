@@ -247,6 +247,7 @@ export default function AboutPage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
+                <li>Phone: (780)-729-7000</li> 
                 <li>Email: futuredgehomes@gmail.com</li>
               </ul>
             </div>

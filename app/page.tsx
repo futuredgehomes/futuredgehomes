@@ -375,13 +375,13 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
               },
               {
                 icon: Wrench,
-                title: "Renovation & Interiors",
+                title: "Multi-Units Residential Buildings",
                 desc: "Modernizing and upgrading existing structures",
                 color: "bg-red-900",
               },
               {
                 icon: PaintBucket,
-                title: "Architectural Design",
+                title: "Infills",
                 desc: "Creative design solutions for unique projects",
                 color: "bg-green-800",
               },
@@ -533,13 +533,13 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    {/* <div className="bg-orange-500 p-3 rounded-full">
+                    <div className="bg-orange-500 p-3 rounded-full">
                       <Phone className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-800">Phone</h4>
-                      <p className="text-gray-600">(780) 245-0238</p>
-                    </div> */}
+                      <p className="text-gray-600">(780)-729-7000</p>
+                    </div>
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="bg-gray-800 p-3 rounded-full">
@@ -596,7 +596,7 @@ const [isReviewsOpen, setIsReviewsOpen] = useState(false);
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                {/* <li>Phone : (780) 245-0238</li> */}
+                <li>Phone : (780)-729-7000</li>
                 <li>Email : futuredgehomes@gmail.com</li>
               </ul>
             </div>
