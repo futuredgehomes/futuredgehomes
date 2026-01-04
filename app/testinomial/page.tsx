@@ -12,37 +12,37 @@ export default function TestinomialPage() {
 
   const testimonials = [
     {
-      name: 'Gurjot S., Leduc',
+      name: 'Oliver Thompson, Leduc',
       rating: 5,
       quote: 'Excellent craftsmanship and attention to detail. Our home was completed on time and within budget — highly recommended!',
       date: 'August 2024',
     },
     {
-      name: 'Harpreet & Jaspreet S., Beaumont',
+      name: 'Lucas Carter, Beaumont',
       rating: 5,
       quote: 'They made our first custom home experience stress-free and enjoyable. The quality speaks for itself.',
       date: 'November 2024',
     },
     {
-      name: 'Simran S., Edmonton',
+      name: 'Emma Collins, Edmonton',
       rating: 5,
       quote: 'We chose Future Edge Homes for our infill project, and it was the best decision. From the design stage to the final touches, they kept us informed and involved. The finishes are premium, and the workmanship is outstanding. I’ve already recommended them to friends!',
       date: 'Jan 2025',
     },
     {
-      name: 'Raman G., Edmonton',
+      name: 'Benjamin Wright, Edmonton',
       rating: 5,
       quote: 'We hired FutureEdge Homes for a 7-plex development, and the coordination was exceptional. The project was complex, but they handled every detail from permits to possession efficiently. We’ll definitely work together again on our next project.',
       date: 'April 2025',
     },
     {
-      name: 'Manpreet S., Leduc',
+      name: 'Olivia Martin, Leduc',
       rating: 5,
       quote: 'Future Edge Homes built our dream home in South Edmonton. The quality, attention to detail, and communication were outstanding!',
       date: 'May 2025',
     },
     {
-      name: 'Gurpreet Singh, Edmonton',
+      name: 'Ethan McLeod, Edmonton',
       rating: 4,
       quote: 'Future Edge Homes exceeded our expectations in every way. The build quality , design, and transparency throughout the project was exceptional',
       date: 'July 2025',
@@ -204,6 +204,7 @@ export default function TestinomialPage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
+                <li>Phone: (780)-729-7000</li> 
                 <li>Email: futuredgehomes@gmail.com</li>
               </ul>
             </div>
